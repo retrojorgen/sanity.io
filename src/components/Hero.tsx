@@ -3,7 +3,7 @@ import HeroImage from '../assets/hero-image.png';
 import FrameIcon from '../assets/frame-icon.svg';
 
 const Hero = () => (
-  <section className="w-full mt-20 max-w-screen-xl mx-auto flex flex-col lg:flex-row justify-between items-stretch px-4 pt-4 lg:p-0">
+  <section className="w-full mt-4 lg:mt-20 max-w-screen-xl mx-auto flex flex-col lg:flex-row justify-between items-stretch px-4 pt-4 lg:p-0">
     <div className="w-full lg:w-1/2 pb-4 lg:pb-40 pt-10">
       <h1 className="text-5xl lg:text-7xl mb-8">
         The Content Operating System

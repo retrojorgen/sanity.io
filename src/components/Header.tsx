@@ -15,9 +15,9 @@ interface MenuItems {
 }
 
 const Header = () => (
-  <header className="w-full max-w-screen-xl mx-auto px-4 py-8 lg:flex items-center justify-between">
-    <section className="flex gap-4 items-center">
-      <a href="#">
+  <header className="w-full max-w-screen-xl mx-auto lg:px-4 lg:py-8 lg:flex items-center justify-between">
+    <section className="flex flex-col lg:flex-row lg:gap-4 items-center border border-slate-200 lg:border-0">
+      <a href="#" className="p-4 lg:p-0">
         <Image
           className="dark:invert"
           src={Logo}
@@ -27,21 +27,21 @@ const Header = () => (
           priority
         />
       </a>
-      <nav id="main-navigation">
-        <ul className="flex gap-2">
+      <nav id="main-navigation" className="w-full lg:w-auto ">
+        <ul className="relative flex gap-4 justify-center lg:justify-start w-full lg:w-auto">
           {MenuItems.map((item, id) => (
             <li
               key={id}
-              className="group relative focus-within:bg-white"
+              className="group lg:relative focus-within:bg-white"
             >
               <h2
-                className="cursor-pointer text-black hover:bg-white rounded-lg p-4 block text-sm group-hover:bg-white"
+                className="cursor-pointer rounded-md text-black hover:bg-white p-2 block text-sm group-hover:bg-white"
                 tabIndex={0}
               >
                 {item.title}
               </h2>
               {item.items?.length > 0 && (
-                <div className="sub-menu bg-background absolute hidden group-hover:flex group-focus-within:flex top-full left-0 gap-8 shadow-lg p-8 rounded-lg">
+                <div className="sub-menu w-full lg:w-auto bg-background absolute hidden group-hover:flex group-focus-within:flex top-full left-0 gap-8 shadow-lg p-8 rounded-lg">
                   {item.items.map((subItem, id) => (
                     <div className="sub-menu-row" key={id}>
                       <h3
@@ -55,12 +55,12 @@ const Header = () => (
                           <li key={id}>
                             <a href="#">
                               <h4
-                                className="text-base text-nowrap"
+                                className="text-base lg:text-nowrap"
                                 tabIndex={0}
                               >
                                 {subSubItem.title}
                               </h4>
-                              <p className="text-nowrap text-black/60">
+                              <p className="lg:text-nowrap text-black/60">
                                 {subSubItem.description}
                               </p>
                             </a>
@@ -77,9 +77,9 @@ const Header = () => (
         </ul>
       </nav>
     </section>
-    <section>
+    <section className="border border-slate-200 lg:border-0">
       <nav>
-        <ul className="flex gap-4 items-center">
+        <ul className="flex gap-4 items-center justify-center lg:justify-end">
           <li>
             <button className="p-4 text-sm">
               <Image
@@ -91,12 +91,14 @@ const Header = () => (
             </button>
           </li>
           <li>
-            <button className="p-4 text-sm">Log in</button>
+            <a href="#" className="p-2 lg:p-4 text-sm text-nowrap">
+              Log in
+            </a>
           </li>
           <li>
             <a
               href="#"
-              className="text-black bg-white rounded-md px-8 py-2 shadow-sm block text-sm"
+              className="text-black lg:bg-white rounded-md p-2 lg:px-8 lg:py-2 lg:shadow-sm block text-sm text-nowrap"
             >
               Contact sales
             </a>
@@ -104,7 +106,7 @@ const Header = () => (
           <li>
             <a
               href="#"
-              className="text-white bg-black rounded-md px-8 py-2 block text-sm"
+              className="text-black lg:text-white lg:bg-black rounded-md p-2 lg:px-8 lg:py-2 block text-sm text-nowrap"
             >
               Get started
             </a>

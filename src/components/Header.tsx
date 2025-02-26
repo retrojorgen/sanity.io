@@ -16,7 +16,7 @@ interface MenuItems {
 
 const Header = () => (
   <header className="w-full max-w-screen-xl mx-auto px-4 py-8 flex items-center justify-between">
-    <section className="flex gap-8 items-center">
+    <section className="flex gap-4 items-center">
       <a href="#">
         <Image
           className="dark:invert"
@@ -30,22 +30,34 @@ const Header = () => (
       <nav id="main-navigation">
         <ul className="flex gap-2">
           {MenuItems.map((item, id) => (
-            <li key={id} className="group relative">
-              <h2 className="cursor-pointer text-black hover:bg-white rounded-lg p-4 block text-base group-hover:bg-white">
+            <li
+              key={id}
+              className="group relative focus-within:bg-white"
+            >
+              <h2
+                className="cursor-pointer text-black hover:bg-white rounded-lg p-4 block text-sm group-hover:bg-white"
+                tabIndex={0}
+              >
                 {item.title}
               </h2>
               {item.items?.length > 0 && (
-                <div className="sub-menu bg-background absolute hidden group-hover:flex top-full left-0 gap-8 shadow-lg p-8 rounded-lg">
+                <div className="sub-menu bg-background absolute hidden group-hover:flex group-focus-within:flex top-full left-0 gap-8 shadow-lg p-8 rounded-lg">
                   {item.items.map((subItem, id) => (
                     <div className="sub-menu-row" key={id}>
-                      <h3 className="uppercase text-sm mb-4 text-black/60">
+                      <h3
+                        className="uppercase text-sm mb-4 text-black/60"
+                        tabIndex={0}
+                      >
                         {subItem.title}
                       </h3>
                       <ul className="flex flex-col gap-4">
                         {subItem.items.map((subSubItem, id) => (
                           <li key={id}>
                             <a href="#">
-                              <h4 className="text-lg text-nowrap">
+                              <h4
+                                className="text-base text-nowrap"
+                                tabIndex={0}
+                              >
                                 {subSubItem.title}
                               </h4>
                               <p className="text-nowrap text-black/60">
@@ -69,7 +81,7 @@ const Header = () => (
       <nav>
         <ul className="flex gap-4 items-center">
           <li>
-            <button className="p-4">
+            <button className="p-4 text-sm">
               <Image
                 src={Search}
                 alt="Search for content"
@@ -79,12 +91,12 @@ const Header = () => (
             </button>
           </li>
           <li>
-            <button className="p-4">Log in</button>
+            <button className="p-4 text-sm">Log in</button>
           </li>
           <li>
             <a
               href="#"
-              className="text-black bg-white rounded-lg px-8 py-2 shadow-sm block"
+              className="text-black bg-white rounded-md px-8 py-2 shadow-sm block text-sm"
             >
               Contact sales
             </a>
@@ -92,7 +104,7 @@ const Header = () => (
           <li>
             <a
               href="#"
-              className="text-white bg-black rounded-lg px-8 py-2 block"
+              className="text-white bg-black rounded-md px-8 py-2 block text-sm"
             >
               Get started
             </a>

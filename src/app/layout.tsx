@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="w-full overflow-x-hidden">
       <body
         className={`${interVariable.variable} antialiased font-[family-name:var(--font-inter)]`}
       >

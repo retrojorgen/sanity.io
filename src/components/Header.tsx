@@ -15,7 +15,7 @@ interface MenuItems {
 }
 
 const Header = () => (
-  <header className="w-full max-w-screen-xl mx-auto px-4 py-8 flex items-center justify-between">
+  <header className="w-full max-w-screen-xl mx-auto px-4 py-8 lg:flex items-center justify-between">
     <section className="flex gap-4 items-center">
       <a href="#">
         <Image

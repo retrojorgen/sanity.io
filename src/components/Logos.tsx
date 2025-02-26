@@ -49,18 +49,25 @@ const logoRows = [
 ];
 
 const Logos = () => (
-  <section className="w-full max-w-screen-xl mx-auto">
-    <div className="flex justify-between items-start gap-4 w-full">
-      <p className="text-nowrap uppercase -translate-y-2.5 text-sm text-black/60">
+  <section className="w-full max-w-screen-xl mx-auto pb-8">
+    <div className="flex flex-col-reverse lg:flex-row justify-between items-start gap-4 w-full mb-4 lg:mb-0">
+      <p className="pt-8 lg:pt-0 w-full lg:w-auto text-center lg:text-left text-nowrap uppercase -translate-y-2.5 text-sm text-black/60">
         Trusted by leaders and innovators
       </p>
       <div className="ruler w-full border border-slate-200" />
     </div>
     {logoRows.map((logos, id) => (
-      <ul className="flex gap-8 mt-8 items-center" key={id}>
+      <ul
+        className="px-4 lg:px-0 flex flex-wrap lg:flex-nowrap gap-2 lg:gap-8 lg:mt-8 items-center justify-between"
+        key={id}
+      >
         {logos.map((logo, id) => (
-          <li key={id}>
-            <Image src={logo} alt="Partner logo" className="w-full" />
+          <li key={id} className="w-2/12 lg:w-full">
+            <Image
+              src={logo}
+              alt="Partner logo"
+              className="max-w-full w-full"
+            />
           </li>
         ))}
       </ul>

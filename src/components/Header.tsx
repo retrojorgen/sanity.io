@@ -42,7 +42,10 @@ const Header = () => {
             priority
           />
         </a>
-        <nav id="main-navigation" className="w-full lg:w-auto ">
+        <nav
+          id="main-navigation"
+          className="w-full lg:w-auto py-2 lg:py-0"
+        >
           <ul className="relative flex gap-4 justify-center lg:justify-start w-full lg:w-auto">
             {MenuItems.map((item, id) => (
               <li
@@ -93,7 +96,7 @@ const Header = () => {
         </nav>
       </section>
       <section className="border border-slate-200 lg:border-0">
-        <nav>
+        <nav className="py-2 lg:py-0">
           <ul className="flex gap-4 items-center justify-center lg:justify-end">
             <li>
               <button className="p-4 text-sm">
